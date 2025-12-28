@@ -1,0 +1,110 @@
+[
+  {
+    "id": "#1001",
+    "title": "Payment Gateway Timeout",
+    "description": "Customers are getting stuck on the spinning loader during checkout.",
+    "customer": "Sarah Jenkins",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "14/12/2025"
+  },
+  {
+    "id": "#1002",
+    "title": "Password Reset Link Not Sending",
+    "description": "Users reporting they are not receiving the automated recovery email.",
+    "customer": "Mark Thompson",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "15/12/2025"
+  },
+  {
+    "id": "#1003",
+    "title": "Search Bar Returns Empty Results",
+    "description": "Even with exact keyword matches, the search page displays 'No products found'.",
+    "customer": "RetailMax",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "17/12/2025"
+  },
+  {
+    "id": "#1004",
+    "title": "Mobile App Crash on Android 14",
+    "description": "App force closes immediately after the splash screen on the latest Android version.",
+    "customer": "General Public",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "18/12/2025"
+  },
+  {
+    "id": "#1005",
+    "title": "Promo Code 'WINTER25' Error",
+    "description": "System says code is expired, but settings show it should be active.",
+    "customer": "Emily Chen",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "20/12/2025"
+  },
+  {
+    "id": "#1006",
+    "title": "Slow Dashboard Loading",
+    "description": "The analytics page takes over 12 seconds to load for users.",
+    "customer": "DataInsights Corp",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "21/12/2025"
+  },
+  {
+    "id": "#1007",
+    "title": "Missing Invoice PDF",
+    "description": "The 'Download Invoice' button does nothing when clicked in the Billing section.",
+    "customer": "TechCorp Inc.",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "22/12/2025"
+  },
+  {
+    "id": "#1008",
+    "title": "Profile Picture Upload Bug",
+    "description": "Users getting 'Internal Server Error' when trying to upload .png files.",
+    "customer": "User123",
+    "priority": "Low",
+    "status": "In Progress",
+    "createdAt": "23/12/2025"
+  },
+  {
+    "id": "#1009",
+    "title": "Google Calendar Sync Failure",
+    "description": "New appointments are not showing up on synced external calendars.",
+    "customer": "Professional Services LLC",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "24/12/2025"
+  },
+  {
+    "id": "#1010",
+    "title": "Live Chat Widget Missing",
+    "description": "The support bubble is not appearing on the mobile version of the site.",
+    "customer": "Internal Audit",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "25/12/2025"
+  },
+  {
+    "id": "#1011",
+    "title": "Duplicate Billing Notification",
+    "description": "Customers are receiving two identical 'Subscription Renewed' emails.",
+    "customer": "Alex Rivera",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "26/12/2025"
+  },
+  {
+    "id": "#1012",
+    "title": "API 500 Error on /v1/auth",
+    "description": "The authentication endpoint is failing sporadically under heavy load.",
+    "customer": "DevOps Hub",
+    "priority": "Critical",
+    "status": "Open",
+    "createdAt": "27/12/2025"
+  }
+]
