@@ -1,7 +1,9 @@
 import React, { use, useState } from 'react';
 import TicketCard from '../TicketCard/TicketCard';
+import ChooseTicket from '../ChooseTicket/ChooseTicket';
+import CompleteTask from '../CompleteTask/CompleteTask';
 
-const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoose,setTicketChoose}) => {
+const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoose,setTicketChoose, removeCard,completeTask}) => {
  // console.log(ticketPromise);
  const ticketData=use(ticketPromise);
  //const [click,setClick]=useState(false);
@@ -21,14 +23,23 @@ const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoos
       <div className=' mt-2  rounded-xl'>
        <div className='ml-2'>
          <h1 className='font-bold text-xl'>Task Status</h1>
-      <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-2xl'>Select a ticket to add to Task Status</button>
+     {ticketChoose.length===0 && (<button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-2xl'>Select a ticket to add to Task 
+      Status</button>)}
+      {/* <button className={`btn opacity-90 bg-[#CCE7D2] w-full rounded-xl ${isSelected?"hidden":""} `}>Select a ticket to add to Task Status</button> */}
+      {/* <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-2xl'>Select a ticket to add to Task Status</button> */}
+           {/* <ChooseTicket></ChooseTicket> */}
+           {
+           ticketChoose.map(choose=><ChooseTicket removeCard={ removeCard}   key={choose.id} choose={choose}></ChooseTicket>)
+           }
        </div>
        {/* Select a ticket to add to Task Status */}
       </div>
       <div className=' mt-2   rounded-xl'>
         <div className='ml-2'>
           <h1 className='font-bold text-xl'>Resolved Task</h1>
-        <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-2xl'>No resolved tasks yet.</button>
+        {/* <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-xl'>No resolved tasks yet.</button> */}
+ {completeTask.length===0 && <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-xl'>No resolved tasks yet.</button>}
+    {completeTask.map(ct=><CompleteTask key={ct.id} ct={ct}></CompleteTask>)}
         </div>
       </div>
      </div>

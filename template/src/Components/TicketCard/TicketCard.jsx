@@ -20,7 +20,7 @@ const TicketCard = ({ticket,ticketProgress,setTicketProgress,ticketChoose,setTic
     //` ${ticket.status} `
   //console.log(ticket);
     return (
-         <div disabled={isSelected} onClick={handleCard}  className="card bg-white rounded-xl ">
+         <div onClick={handleCard}  className="card bg-white rounded-xl ">
          <div className='m-3'>
           <div className=' flex gap-1 justify-between '>
           <h1 className='font-bold text-xl'>{ticket.title}</h1>

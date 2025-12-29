@@ -15,13 +15,22 @@ const ticketPromise=fetchTickets();
 function App() {
   const [ticketProgress,setTicketProgress]=useState(0);
    const [ticketChoose,setTicketChoose]=useState([])
-   console.log(ticketChoose);
+   const [completeTask,setCompleteTask]=useState([]);
+   const removeCard=(rc)=>{
+  //  console.log(rc)
+  const filterInfo=ticketChoose.filter(tic=>tic.id!==rc.id)
+ setTicketChoose(filterInfo);
+ setCompleteTask([...completeTask,rc])
+   }
+
+//   console.log(ticketChoose);
   return (
     <>
     {/* <h1>Vite + React</h1> */}
    <Navbar></Navbar>
     <Banner ticketProgress={ticketProgress}></Banner>
-    <MainSection ticketChoose={ticketChoose} setTicketChoose={setTicketChoose} ticketProgress={ticketProgress} setTicketProgress={setTicketProgress} ticketPromise={ticketPromise}></MainSection>
+    <MainSection ticketChoose={ticketChoose}  completeTask={completeTask} setTicketChoose={setTicketChoose} ticketProgress={ticketProgress}
+    removeCard={removeCard} setTicketProgress={setTicketProgress} ticketPromise={ticketPromise}></MainSection>
     <Footer></Footer>  
     <ToastContainer />
     </>
