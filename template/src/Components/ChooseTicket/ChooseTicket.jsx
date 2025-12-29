@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
-const ChooseTicket = ({choose, removeCard}) => {
+const ChooseTicket = ({choose, removeCard,ticketProgress,setTicketProgress,solveTicket,setSolveTicket}) => {
    // console.log(choose)
 //    const [click,setClick]=useState(false);
 const complete=()=>{
+     toast(`Completed  ${choose.id}! `)
 removeCard(choose)
-
+const updateTicket=ticketProgress-1
+setTicketProgress(updateTicket);
+ setSolveTicket(solveTicket+1);
+ 
 }
     return (
         <div className='bg-[#CCE7D2] mb-2'>

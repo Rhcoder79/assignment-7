@@ -3,9 +3,10 @@ import TicketCard from '../TicketCard/TicketCard';
 import ChooseTicket from '../ChooseTicket/ChooseTicket';
 import CompleteTask from '../CompleteTask/CompleteTask';
 
-const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoose,setTicketChoose, removeCard,completeTask}) => {
+const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoose,setTicketChoose, removeCard,completeTask,solveTicket,setSolveTicket}) => {
  // console.log(ticketPromise);
  const ticketData=use(ticketPromise);
+
  //const [click,setClick]=useState(false);
   return (
    <section className='mt-3 bg-amber-300 max-w-[90%] mx-auto  '>
@@ -13,10 +14,25 @@ const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoos
    <div className='grid grid-cols-4 gap-2'>
       <div className="cardContainer ml-1 grid-span col-span-3 grid grid-cols-2 gap-4 ">
    
+   {/* 
    {
         ticketData.map(ticket=><TicketCard ticketProgress={ticketProgress} setTicketProgress={setTicketProgress}
-           key={ticket.id} ticket={ticket} ticketChoose={ticketChoose} setTicketChoose={setTicketChoose} ></TicketCard> )
-   }
+           key={ticket.id} ticket={ticket}  ticketChoose={ticketChoose} setTicketChoose={setTicketChoose} ></TicketCard> )
+   } 
+    */}
+    {
+        ticketData.map(ticket=>{
+          const isAlreadyDone=completeTask.find(item=>item.id===ticket.id);
+          if(!isAlreadyDone){
+            return(
+            <TicketCard ticketProgress={ticketProgress} setTicketProgress={setTicketProgress}
+           key={ticket.id} ticket={ticket}  ticketChoose={ticketChoose} setTicketChoose={setTicketChoose} ></TicketCard>
+            )
+          }
+          return null;
+        }
+            )
+   } 
       
      </div>
      <div className='col-span-1 bg-white mr-1 '>
@@ -29,7 +45,7 @@ const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoos
       {/* <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-2xl'>Select a ticket to add to Task Status</button> */}
            {/* <ChooseTicket></ChooseTicket> */}
            {
-           ticketChoose.map(choose=><ChooseTicket removeCard={ removeCard}   key={choose.id} choose={choose}></ChooseTicket>)
+           ticketChoose.map(choose=><ChooseTicket solveTicket={solveTicket} setSolveTicket={setSolveTicket} ticketProgress={ticketProgress} setTicketProgress={setTicketProgress} removeCard={ removeCard}   key={choose.id} choose={choose}></ChooseTicket>)
            }
        </div>
        {/* Select a ticket to add to Task Status */}
@@ -39,7 +55,7 @@ const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoos
           <h1 className='font-bold text-xl'>Resolved Task</h1>
         {/* <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-xl'>No resolved tasks yet.</button> */}
  {completeTask.length===0 && <button className='btn opacity-90 bg-[#CCE7D2] w-full rounded-xl'>No resolved tasks yet.</button>}
-    {completeTask.map(ct=><CompleteTask key={ct.id} ct={ct}></CompleteTask>)}
+    {completeTask.map(ct=><CompleteTask key={ct.id}  ct={ct}></CompleteTask>)}
         </div>
       </div>
      </div>
@@ -50,3 +66,4 @@ const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoos
 };
 
 export default MainSection;
+      

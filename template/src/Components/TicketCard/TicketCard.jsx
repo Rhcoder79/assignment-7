@@ -4,7 +4,7 @@ import Dot from "../../assets/Ellipse-22.png"
 import { toast } from 'react-toastify';
 
 
-const TicketCard = ({ticket,ticketProgress,setTicketProgress,ticketChoose,setTicketChoose}) => {
+const TicketCard = ({ticket,ticketProgress,setTicketProgress,ticketChoose,setTicketChoose,}) => {
      const [isSelected,setIsSelected]=useState(false);
     const handleCard=()=>{
         setIsSelected(true)

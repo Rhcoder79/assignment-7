@@ -14,6 +14,7 @@ const ticketPromise=fetchTickets();
 
 function App() {
   const [ticketProgress,setTicketProgress]=useState(0);
+  const [solveTicket,setSolveTicket]=useState(0)
    const [ticketChoose,setTicketChoose]=useState([])
    const [completeTask,setCompleteTask]=useState([]);
    const removeCard=(rc)=>{
@@ -28,9 +29,9 @@ function App() {
     <>
     {/* <h1>Vite + React</h1> */}
    <Navbar></Navbar>
-    <Banner ticketProgress={ticketProgress}></Banner>
-    <MainSection ticketChoose={ticketChoose}  completeTask={completeTask} setTicketChoose={setTicketChoose} ticketProgress={ticketProgress}
-    removeCard={removeCard} setTicketProgress={setTicketProgress} ticketPromise={ticketPromise}></MainSection>
+    <Banner ticketProgress={ticketProgress} solveTicket={solveTicket} ></Banner>
+    <MainSection ticketChoose={ticketChoose} solveTicket={solveTicket} setSolveTicket={setSolveTicket} completeTask={completeTask} setTicketChoose={setTicketChoose} ticketProgress={ticketProgress}
+    removeCard={removeCard} setTicketProgress={setTicketProgress} ticketPromise={ticketPromise} ></MainSection>
     <Footer></Footer>  
     <ToastContainer />
     </>
