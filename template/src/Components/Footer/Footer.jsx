@@ -5,9 +5,9 @@ import Linkedin from "../../assets/linkedin.png"
 import Gmail from "../../assets/gmail.png"
 const Footer = () => {
     return (
-        <footer className="bg-[#09090B] p-10  ">
-   <section className='grid grid-cols-5 gap-5 text-white max-w-[90%] mx-auto border-b-2 border-gray-300'>
-    <nav >
+        <footer className="bg-[#09090B] p-5 md:p-10  ">
+   <section className='grid grid-cols-2 lg:grid-cols-5 gap-5 text-white max-w-[90%] mx-auto border-b-2 border-gray-300'>
+    <nav className='col-span-2 lg:col-span-1' >
     <h3 className='font-bold'>CS — Ticket System</h3>
     <p className='opacity-70'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

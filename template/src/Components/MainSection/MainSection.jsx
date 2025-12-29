@@ -11,8 +11,8 @@ const MainSection = ({ticketPromise,ticketProgress,setTicketProgress,ticketChoos
   return (
    <section className='mt-3 bg-amber-300 max-w-[90%] mx-auto  '>
     <h1 className='text-2xl font-bold opacity-90 ml-1'>Customer Tickets</h1>
-   <div className='grid grid-cols-4 gap-2'>
-      <div className="cardContainer ml-1 grid-span col-span-3 grid grid-cols-2 gap-4 ">
+   <div className='grid grid-cols-1 lg:grid-cols-4 gap-2'>
+      <div className="cardContainer ml-1 col-span-1  lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4 ">
    
    {/* 
    {
