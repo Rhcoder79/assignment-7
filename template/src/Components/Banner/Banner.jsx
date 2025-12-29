@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Banner = () => {
+const Banner = ({ticketProgress}) => {
     return (
         <div className='banner max-w-[90%] font-bold mx-auto text-white flex justify-center gap-4 bg-gray-400 mt-4'>
       <div className=" w-[40%] p-10 text-center rounded-xl "
       style={{backgroundImage:`url('/images/vector1.png'),linear-gradient(to right,#632ee3,#9f62f2)`}}>
         <p className='text-2xl'>In-progress</p>
-        <h1 className='text-3xl'>0</h1>
+        <h1 className='text-3xl'>{ticketProgress}</h1>
         </div>
       <div className=" w-[40%] p-10 text-center rounded-xl"
        style={{backgroundImage:`url('/images/vector1.png'),linear-gradient(to right,#54CF68,#00827A)`}}>
